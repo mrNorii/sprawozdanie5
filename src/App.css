@@ -1,0 +1,17 @@
+*{
+    background: grey;
+    color: white;
+}
+
+#Category{
+    background: red;
+}
+
+#Setup{
+    background: green;
+}
+
+#Delivery{
+    background: yellow;
+    color: black;
+}
