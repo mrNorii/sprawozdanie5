@@ -1,32 +1,24 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
+import Axios from 'axios';
+import "./App.css";
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      Marka: {}
+function App() {
+  const [user, setUser] = useState("");
+
+  const stala = () => {
+    Axios.get("https://v2.jokeapi.dev/joke/Any?safe-mode")
+    .then((response) => {
+        console.log(response);
+        setUser(response.data.category + " | " + response.data.setup + " ... " + response.data.delivery);
     }
-  }
-
-  componentDidMount() {
-    fetch("http://127.0.0.1:8000/modele/api/modeles/1")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          Marka: data
-        })
-      })
-  }
-
-  render() {
-    return (
-      <div>
-        asd
-      </div>
-    )     
-  }
-
+  );
+};
+return (
+  <div>
+    Click Button <button onClick={stala}>Get Joke</button><br></br>
+    {user}
+  </div>
+  );
 }
-//{this.state.Model.name}
 
 export default App;
