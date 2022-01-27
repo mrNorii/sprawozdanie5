@@ -3,15 +3,34 @@
     color: white;
 }
 
-#Category{
-    background: red;
+#box{
+    padding: 3rem;
 }
 
-#Setup{
-    background: green;
+#marka{
+    
 }
 
-#Delivery{
-    background: yellow;
-    color: black;
+#model{
+
+}
+
+#opsi{
+
+}
+
+#pojemnosc{
+
+}
+
+#przebieg{
+
+}
+
+#rodzaj{
+
+}
+
+#rok{
+    
 }

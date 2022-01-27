@@ -25,27 +25,23 @@ export default class App extends React.Component{
   if(!this.state.Cars.length)
     return <div>Didn't get a car!</div>
 
+  const EveryCar = this.state.Cars.map(Car => (
+    <div id='box' key={Car.id}>
+      <div id='marka'>{Car.Marka}</div>
+      <div id='model'>{Car.Model}</div>
+      <div id='opis'>{Car.Opis}</div>
+      <div id='pojemnosc'>{Car.Pojemnosc_Silnika}</div>
+      <div id='przebieg'>{Car.Przebieg}</div>
+      <div id='rodzaj'>{Car.Rodzaj_Paliwa}</div>
+      <div id='rok'>{Car.Rok}</div> 
+    </div>
+    ));
+
     return (
-      <div>
-        {this.state.Cars.map(Car => (
-          <div>
-            <div>{Car.Marka}</div>
-            <div>{Car.Model}</div>
-            <div>{Car.Opis}</div>
-            <div>{Car.Pojemnosc_Silnika}</div>
-            <div>{Car.Przebieg}</div>
-            <div>{Car.Rodzaj_Paliwa}</div>
-            <div>{Car.Rok}</div> 
-          </div>
-        ))}
-      </div>
+      <div>{EveryCar}</div>
     );
   }
 
 }
 
-
-
-//setCar(response.data[0].Marka + " " + response.data[0].Model + " " + response.data[0].Opis + " " + response.data[0].Pojemnosc_Silnika + " "
-//+ response.data[0].Przebieg + " " + response.data[0].Rodzaj_Paliwa + " " + response.data[0].Rok)
 //http://127.0.0.1:8000/modele/api/modeles/?format=json
