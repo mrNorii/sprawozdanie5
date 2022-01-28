@@ -1,36 +1,100 @@
 *{
-    background: grey;
-    color: white;
+    background: black;
+    color: whitesmoke;
 }
 
 #box{
-    padding: 3rem;
+    background: #303030;
+    padding: 4rem;
+    font-family: sans-serif, Arial;
+    display: flex;
+    border: 3px solid black;
+    border-bottom: 1.5px solid black;
+    text-align: center;   
+    border-radius: 4em;
+    flex-direction: row;
 }
 
-#marka{
-    
+#text{
+    color: rgb(209, 24, 24);
+    font-weight: 600;
+    background: #303030;
 }
 
-#model{
-
+img{
+    border: 3px solid white;
+    text-align: center;
+    vertical-align: middle; 
 }
 
-#opsi{
 
+#left{
+    display: block;
+    padding-right: 2em;
+    width: 15%;
+    background: #303030;
 }
 
-#pojemnosc{
-
+#right{
+    display: block;
+    text-align: left;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    width: 55%;
+    background: #303030;
 }
 
-#przebieg{
-
+#right2{
+    width: 30%;
+    text-align: center;
+    vertical-align: middle; 
+    background: #303030;
 }
 
-#rodzaj{
-
+#marka, #markaL{
+    font-size: 3rem;
+    font-weight: 700;
+    background: #303030;
 }
 
-#rok{
-    
+#model, #modelL{
+    font-size: 2rem;
+    font-weight: 700;
+    background: #303030;
 }
+
+#opis, #opisL{
+    padding-top: 10px;
+    background: #303030;
+}
+
+#pojemnosc, #pojemnoscL{
+    padding-top: 10px;
+    background: #303030;
+}
+
+#przebieg, #przebiegL{
+    padding-top: 10px;
+    background: #303030;
+}
+
+#rodzaj, #rodzajL{
+    padding-top: 10px;
+    background: #303030;
+}
+
+#rok ,#rokL{
+    padding-top: 10px;
+    background: #303030;
+}
+
+/* Animation */
+@keyframes start {
+    from {width: 0%;}
+    to {width: 92.5%;}
+  }
+  
+  div#box {
+    animation-name: start;
+    animation-duration: 4s;
+  }
