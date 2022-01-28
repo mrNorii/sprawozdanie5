@@ -90,11 +90,11 @@ img{
 
 /* Animation */
 @keyframes start {
-    from {width: 0%;}
-    to {width: 92.5%;}
+    from {transform: translateX(100%)}
+    to {transform: translateX(0%)}
   }
   
   div#box {
     animation-name: start;
-    animation-duration: 4s;
+    animation-duration: 3s;
   }

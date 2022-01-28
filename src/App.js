@@ -4,6 +4,7 @@ import "./App.css";
 export default class App extends React.Component{
   state = {
     loading: true,
+    slide: false,
     Cars: []
   };
 
@@ -11,9 +12,15 @@ export default class App extends React.Component{
     const url = "http://127.0.0.1:8000/modele/api/modeles/?format=json";
     const response = await fetch(url)
     const data = await response.json();
-    this.setState({Cars: data, loading: false})
+    this.setState({Cars: data, loading: false, slide: false})
     
     console.log(data[0]);
+  }
+
+  handleSlide(){
+    this.setState({
+      slide: true
+    })
   }
 
 
@@ -26,7 +33,7 @@ export default class App extends React.Component{
     return <div>Didn't get a car!</div>
 
   const EveryCar = this.state.Cars.map(Car => (
-    <div id='box' key={Car.id}>
+    <div id='box' key={Car.id} >
       <div id='left'>
         <div id='markaL'><label id='text'>Marka: </label></div>
         <div id='modelL'><label id='text'>Model: </label></div>
@@ -46,7 +53,7 @@ export default class App extends React.Component{
         <div id='opis'>{Car.Opis}</div>
       </div>
       <div id='right2'>
-        <img src={Car.Zdjecie} id='zdjecie' width="400px" />
+        <img src={Car.Zdjecie} id='zdjecie' width="300px" />
       </div>
     </div>
     ));
